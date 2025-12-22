@@ -13,7 +13,7 @@
 ## System Architecture Overview
 This platform is built on a **Hybrid Computational Engine** designed to solve the "Garbage In, Garbage Out" problem of public financial data. It bridges the gap between raw market data and the manual "Adjusted" reality of institutional deal-making.
 
-![System Architecture Blueprint](assets/architecture_diagram.png)
+![System Architecture Blueprint](architecture_diagram.png)
 *Figure 1: High-level architectural data flow from raw API ingestion to automated Excel model generation.*
 
 ### Key Architectural Features:
@@ -29,7 +29,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 **The Problem:** Most student models are forward-looking.
 **The Solution:** This engine solves for the **Sponsor Floor** (Max Entry Price) required to hit a specific IRR target (e.g., 20%) given leverage constraints.
 
-![LBO Dashboard & Sensitivity Matrix](assets/lbo_dashboard.png)
+![LBO Dashboard & Sensitivity Matrix](lbo_dashboard.png)
 *Figure 2: The LBO Dashboard showing the Peer Comps Bridge (Left) and the 5x5 Sponsor Floor Sensitivity Matrix (Right).*
 
 * **Reverse LBO Logic:** Back-solves for "Ability to Pay" based on exit multiples and leverage tranches.
@@ -40,7 +40,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 **The Problem:** Standard deviation assumes normal distribution, failing to capture tail risk.
 **The Solution:** A stochastic engine that models non-linear downside risk.
 
-![Quantitative Risk & Monte Carlo Dashboard](assets/risk_dashboard.png)
+![Quantitative Risk & Monte Carlo Dashboard](risk_dashboard.png)
 *Figure 3: Monte Carlo Simulation (5,000 paths) visualizing tail-risk distribution and Value at Risk (VaR) thresholds.*
 
 * **Stochastic Modeling:** Projects 5,000+ price paths via Monte Carlo simulations to visualize potential future asset performance.
@@ -49,7 +49,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 ### 3. Options Analytics Lab (Derivatives)
 A dedicated workbench for pricing and visualizing second-order risks in derivatives portfolios.
 
-![Options Greeks Heatmap](assets/options_heatmap.png)
+![Options Greeks Heatmap](/options_heatmap.png)
 *Figure 4: Black-Scholes Derivatives Lab showing real-time Greeks sensitivity.*
 
 * **BSM Pricing:** Full implementation of the Black-Scholes-Merton model for European options.
