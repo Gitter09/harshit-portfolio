@@ -30,7 +30,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 **The Solution:** This engine solves for the **Sponsor Floor** (Max Entry Price) required to hit a specific IRR target (e.g., 20%) given leverage constraints.
 
 ![LBO Dashboard & Sensitivity Matrix](lbo_dashboard.png)
-*Figure 2: The LBO Dashboard showing the Peer Comps Bridge (Left) and the 5x5 Sponsor Floor Sensitivity Matrix (Right).*
+*Figure 2: The LBO Dashboard showing the Peer Comps Bridge (Top) and the 5x5 Sponsor Floor Sensitivity Matrix (Bottom).*
 
 * **Reverse LBO Logic:** Back-solves for "Ability to Pay" based on exit multiples and leverage tranches.
 * **Comps Bridging:** Automates the reconciliation of Equity Value to Enterprise Value, handling cross-currency adjustments (USD/INR/EUR) instantly.
