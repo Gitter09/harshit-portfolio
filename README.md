@@ -41,7 +41,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 **The Solution:** A stochastic engine that models non-linear downside risk.
 
 ![Quantitative Risk & Monte Carlo Dashboard](risk_dashboard.png)
-*Figure 3: Monte Carlo Simulation (5,000 paths) visualizing tail-risk distribution and Value at Risk (VaR) thresholds.*
+*Figure 3: Monte Carlo Simulation (first 50 paths) visualizing tail-risk distribution and Value at Risk (VaR) thresholds.*
 
 * **Stochastic Modeling:** Projects 5,000+ price paths via Monte Carlo simulations to visualize potential future asset performance.
 * **Tail Risk Metrics:** Calculates **Value at Risk (VaR)** and **Expected Shortfall (CVaR)** at 95% and 99% confidence intervals to stress-test portfolios against "Black Swan" events.
