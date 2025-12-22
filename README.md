@@ -10,7 +10,7 @@
 
 ---
 
-## 🏗 System Architecture Overview
+## System Architecture Overview
 This platform is built on a **Hybrid Computational Engine** designed to solve the "Garbage In, Garbage Out" problem of public financial data. It bridges the gap between raw market data and the manual "Adjusted" reality of institutional deal-making.
 
 ![System Architecture Blueprint](assets/architecture_diagram.png)
@@ -23,7 +23,7 @@ This platform is built on a **Hybrid Computational Engine** designed to solve th
 
 ---
 
-## 🛠 Proprietary Toolset
+## Proprietary Toolset
 
 ### 1. Leveraged Buyout (LBO) & Valuation Engine
 **The Problem:** Most student models are forward-looking.
@@ -61,7 +61,7 @@ A dedicated workbench for pricing and visualizing second-order risks in derivati
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 * **Backend:** Python (Flask), `concurrent.futures`, `yfinance`
 * **Computational:** `Pandas`, `NumPy`, `skfolio`, `SciPy` (Optimization & Stats)
 * **Data Visualization:** `Plotly.js` (Interactive Financial Charts)
@@ -70,5 +70,5 @@ A dedicated workbench for pricing and visualizing second-order risks in derivati
 
 ---
 
-## 📧 Contact & Professional Inquiries
+## Contact & Professional Inquiries
 **Harshit Singh** *Fresh Graduate | Aspiring Investment Professional* [LinkedIn](https://linkedin.com/in/harshit-singh-502246214/) | [Email](mailto:harshitsingh4907@gmail.com)
