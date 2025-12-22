@@ -58,7 +58,8 @@ A dedicated workbench for pricing and visualizing second-order risks in derivati
 ### 4. NSE Portfolio Optimizer
 * **Modern Portfolio Theory (MPT):** Utilizes Mean-Variance Optimization and Hierarchical Risk Parity (HRP) to construct efficient frontiers.
 * **Bayesian Shifting:** Includes a "User Views" feature that allows analysts to shift historical return distributions to match subjective future expectations (Black-Litterman framework).
-
+![Optimizer Efficient Frontier](efficient_frontier.png)
+*Figure 5: Visualizing the Efficient Frontier by plotting Expected Return vs. Risk (Volatility) for 3,000 simulated portfolios.*
 ---
 
 ## Tech Stack
