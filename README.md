@@ -72,4 +72,5 @@ A dedicated workbench for pricing and visualizing second-order risks in derivati
 
 ## Contact & Professional Inquiries
 **Harshit Singh** *Fresh Graduate | Aspiring Investment Professional* [LinkedIn](https://linkedin.com/in/harshit-singh-502246214/) | [Email](mailto:harshitsingh4907@gmail.com)
+
 Special thanks to **Prof. Byomakesh Debata** and **Prof. Aditya Sharma** for the foundational lectures on **Risk Analysis**.
