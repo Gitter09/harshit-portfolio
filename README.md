@@ -29,7 +29,7 @@ This platform bridges the gap between raw market data and the "Adjusted" reality
 **The Problem:** Black-Scholes assumes constant volatility, failing to capture the "Volatility Smile."
 **The Solution:** A dual-engine workbench that contrasts standard GBM with Stochastic Volatility models.
 
-![Options Analysis Dashboard](options_analytics.png)
+![Options Analysis Dashboard](new_options_heatmap.png)
 *Figure 2: Options Analytics interface featuring real-time Greeks sensitivity and Heston model path simulations.*
 
 * **Heston Model Integration:** Implements the Heston SDE using Euler-Maruyama discretization to model the "Leverage Effect" (negative correlation between price and volatility).
