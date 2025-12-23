@@ -7,7 +7,6 @@
 > **⚠️ Note on Proprietary Source Code:** > The core logic for this platform (including the Reverse-LBO solver and Excel generation engine) is proprietary. This repository serves as a technical documentation hub and architectural overview. **Full source code access is available for audit upon request.**
 
 **Live Demo:** [www.harshit-portfolio.me](https://www.harshit-portfolio.me)
-Special thanks to Prof. Byomakesh Debata and Prof. Aditya Sharma for the foundational lectures on Risk Analysis.
 ---
 
 ## System Architecture Overview
@@ -73,3 +72,4 @@ A dedicated workbench for pricing and visualizing second-order risks in derivati
 
 ## Contact & Professional Inquiries
 **Harshit Singh** *Fresh Graduate | Aspiring Investment Professional* [LinkedIn](https://linkedin.com/in/harshit-singh-502246214/) | [Email](mailto:harshitsingh4907@gmail.com)
+Special thanks to **Prof. Byomakesh Debata** and **Prof. Aditya Sharma** for the foundational lectures on **Risk Analysis**.
