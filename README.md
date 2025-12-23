@@ -29,7 +29,7 @@ This platform bridges the gap between raw market data and the "Adjusted" reality
 **The Problem:** Black-Scholes assumes constant volatility, failing to capture the "Volatility Smile."
 **The Solution:** A dual-engine workbench that contrasts standard GBM with Stochastic Volatility models.
 
-![Options Analysis Dashboard](new_options_heatmap.png)
+![Options Analysis Dashboard](options_heatmap.png)
 *Figure 2: Options Analytics interface featuring real-time Greeks sensitivity and Heston model path simulations.*
 
 * **Heston Model Integration:** Implements the Heston SDE using Euler-Maruyama discretization to model the "Leverage Effect" (negative correlation between price and volatility).
@@ -40,7 +40,7 @@ This platform bridges the gap between raw market data and the "Adjusted" reality
 **The Problem:** Correlation is not Cointegration. Two assets can move together but drift apart forever.
 **The Solution:** An econometrics engine that identifies stationary spreads for mean-reversion trading.
 
-![Pairs Trading Interface](INSERT_YOUR_PAIRS_TRADING_IMAGE_HERE)
+![Pairs Trading Interface](pairs_dashboard.png)
 *Figure 3: Cointegration analysis dashboard showing Z-Score signals and ADF test stationarity metrics.*
 
 * **Cointegration Testing:** Utilizes the **Augmented Dickey-Fuller (ADF) Test** to verify the stationarity of the spread residuals.
