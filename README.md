@@ -2,75 +2,90 @@
 
 ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-Web_Framework-000000?style=flat&logo=flask&logoColor=white)
-![Financial Engineering](https://img.shields.io/badge/Domain-Leveraged_Finance_%26_Quantitative_Risk-success)
+![Financial Engineering](https://img.shields.io/badge/Domain-Stochastic_Calculus_%26_Statistical_Arbitrage-blue)
 
-> **⚠️ Note on Proprietary Source Code:** > The core logic for this platform (including the Reverse-LBO solver and Excel generation engine) is proprietary. This repository serves as a technical documentation hub and architectural overview. **Full source code access is available for audit upon request.**
+> **⚠️ Note on Proprietary Source Code:** The core logic for this platform (including the Heston Stochastic Volatility solver, Pairs Trading cointegration engine, and Reverse-LBO solver) is proprietary. This repository serves as a technical documentation hub. **Full source code access is available for audit upon request.**
 
 **Live Demo:** [www.harshit-portfolio.me](https://www.harshit-portfolio.me)
+
 ---
 
-## System Architecture Overview
-This platform is built on a **Hybrid Computational Engine** designed to solve the "Garbage In, Garbage Out" problem of public financial data. It bridges the gap between raw market data and the manual "Adjusted" reality of institutional deal-making.
+## System Architecture: Hybrid Computational Engine
+This platform bridges the gap between raw market data and the "Adjusted" reality of institutional finance. It implements asynchronous data lifecycles to solve the latency issues of real-time financial modeling.
 
 ![System Architecture Blueprint](architecture_diagram.png)
-*Figure 1: High-level architectural data flow from raw API ingestion to automated Excel model generation.*
+*Figure 1: High-level architectural data flow from raw API ingestion to automated model generation.*
 
 ### Key Architectural Features:
-* **Parallel Fetching Engine:** Implements `concurrent.futures.ThreadPoolExecutor` to execute asynchronous requests to market data providers, reducing peer-group data latency by ~85%.
-* **Stateful Manual Overrides:** A custom JavaScript engine allows analysts to override LTM EBITDA and Net Debt in real-time. The UI instantly recalculates the entire valuation bridge and LBO floor without a page refresh.
-* **Audit-Ready Excel Export:** Built with `XlsxWriter`, the tool generates professional models that use **live Excel formulas** (e.g., `=EV/EBITDA`) and follow the standard Blue/Black investment banking formatting convention.
+* **Parallel Fetching Engine:** Implements `concurrent.futures.ThreadPoolExecutor` for asynchronous data ingestion, reducing peer-group latency by ~85%.
+* **Stateful Manual Overrides:** Custom JS engine allowing real-time overrides of LTM EBITDA and Net Debt with instant valuation bridge recalculation.
+* **Audit-Ready Excel Export:** Generates professional models via `XlsxWriter` using live Excel formulas and standard IB formatting conventions.
 
 ---
 
 ## Proprietary Toolset
 
-### 1. Leveraged Buyout (LBO) & Valuation Engine
-**The Problem:** Most student models are forward-looking.
-**The Solution:** This engine solves for the **Sponsor Floor** (Max Entry Price) required to hit a specific IRR target (e.g., 20%) given leverage constraints.
+### 1. Stochastic Options Lab (Advanced Derivatives)
+**The Problem:** Black-Scholes assumes constant volatility, failing to capture the "Volatility Smile."
+**The Solution:** A dual-engine workbench that contrasts standard GBM with Stochastic Volatility models.
 
-![LBO Dashboard & Sensitivity Matrix](lbo_dashboard.png)
-*Figure 2: The LBO Dashboard showing the Peer Comps Bridge (Top) and the 5x5 Sponsor Floor Sensitivity Matrix (Bottom).*
+![Options Analysis Dashboard](options_analytics.png)
+*Figure 2: Options Analytics interface featuring real-time Greeks sensitivity and Heston model path simulations.*
 
-* **Reverse LBO Logic:** Back-solves for "Ability to Pay" based on exit multiples and leverage tranches.
-* **Comps Bridging:** Automates the reconciliation of Equity Value to Enterprise Value, handling cross-currency adjustments (USD/INR/EUR) instantly.
-* **Sensitivity Matrix:** Generates a real-time heatmap of Implied Max Entry EV, allowing for rapid "Go/No-Go" deal screening.
+* **Heston Model Integration:** Implements the Heston SDE using Euler-Maruyama discretization to model the "Leverage Effect" (negative correlation between price and volatility).
+* **Higher Moment Analysis:** Calculates **Skewness** and **Excess Kurtosis** to identify "Fat Tail" risks and non-normal distribution patterns in underlying assets.
+* **Monte Carlo Convergence:** Simulates 5,000+ paths to calculate Probability ITM and Fair Value under stochastic conditions.
 
-### 2. Quantitative Risk Estimator (VaR)
-**The Problem:** Standard deviation assumes normal distribution, failing to capture tail risk.
-**The Solution:** A stochastic engine that models non-linear downside risk.
+### 2. Statistical Arbitrage (Pairs Trading) Lab
+**The Problem:** Correlation is not Cointegration. Two assets can move together but drift apart forever.
+**The Solution:** An econometrics engine that identifies stationary spreads for mean-reversion trading.
 
-![Quantitative Risk & Monte Carlo Dashboard](risk_dashboard.png)
-*Figure 3: Monte Carlo Simulation (first 50 paths) visualizing tail-risk distribution and Value at Risk (VaR) thresholds.*
+![Pairs Trading Interface](INSERT_YOUR_PAIRS_TRADING_IMAGE_HERE)
+*Figure 3: Cointegration analysis dashboard showing Z-Score signals and ADF test stationarity metrics.*
 
-* **Stochastic Modeling:** Projects 5,000+ price paths via Monte Carlo simulations to visualize potential future asset performance.
-* **Tail Risk Metrics:** Calculates **Value at Risk (VaR)** and **Expected Shortfall (CVaR)** at 95% and 99% confidence intervals to stress-test portfolios against "Black Swan" events.
+* **Cointegration Testing:** Utilizes the **Augmented Dickey-Fuller (ADF) Test** to verify the stationarity of the spread residuals.
+* **Dynamic Hedging:** Calculates the Hedge Ratio ($\beta$) via OLS Regression to construct a market-neutral synthetic asset.
+* **Z-Score Signal Generation:** Normalizes spread deviations to identify entry/exit points at $\pm2\sigma$ thresholds.
 
-### 3. Options Analytics Lab (Derivatives)
-A dedicated workbench for pricing and visualizing second-order risks in derivatives portfolios.
+### 3. Leveraged Buyout (LBO) & Valuation Engine
+* **Reverse LBO Logic:** Back-solves for the **Sponsor Floor** (Max Entry Price) required to hit specific IRR/MOIC targets.
+* **Sensitivity Matrix:** Generates real-time 5x5 heatmaps of Implied Max Entry EV relative to exit multiples and leverage tranches.
 
-![Options Greeks Heatmap](/options_heatmap.png)
-*Figure 4: Black-Scholes Derivatives Lab showing real-time Greeks sensitivity.*
-
-* **BSM Pricing:** Full implementation of the Black-Scholes-Merton model for European options.
-* **Greeks Visualizer:** Real-time heatmap visualization of **Delta, Gamma, Theta, and Vega**, allowing traders to assess sensitivity to time decay and volatility shifts.
+![LBO Sensitivity Matrix](lbo_dashboard.png)
+*Figure 4: 5x5 Sensitivity Matrix visualizing Sponsor Floor valuation across varied leverage and exit assumptions.*
 
 ### 4. NSE Portfolio Optimizer
-* **Modern Portfolio Theory (MPT):** Utilizes Mean-Variance Optimization and Hierarchical Risk Parity (HRP) to construct efficient frontiers.
-* **Bayesian Shifting:** Includes a "User Views" feature that allows analysts to shift historical return distributions to match subjective future expectations (Black-Litterman framework).
-![Optimizer Efficient Frontier](efficient_frontier.png)
-*Figure 5: Visualizing the Efficient Frontier by plotting Expected Return vs. Risk (Volatility) for 3,000 simulated portfolios.*
+* **Modern Portfolio Theory (MPT):** Constructs Efficient Frontiers using Mean-Variance Optimization and Hierarchical Risk Parity (HRP).
+* **Bayesian Shifting:** Features a Black-Litterman style "User Views" adjustment for historical return distributions to match future expectations.
+
+![Efficient Frontier Visualization](efficient_frontier.png)
+*Figure 5: Plotting the Efficient Frontier for NSE stocks to maximize Risk-Adjusted Returns (Sharpe Ratio).*
+
+### 5. Quantitative Risk Estimator (VaR)
+![Risk Dashboard](risk_dashboard.png)
+*Figure 6: Monte Carlo Simulation (first 50 paths) visualizing tail-risk distribution and Value at Risk (VaR) thresholds.*
+* **Tail Risk Metrics:** Calculates **Value at Risk (VaR)** and **Expected Shortfall (CVaR)** at 95% and 99% confidence intervals.
+* **Stochastic Stress Testing:** Projects price paths via Monte Carlo to stress-test portfolios against "Black Swan" events.
+
+### 6. Valuation Sandbox
+* **Interactive DCF:** Real-time sensitivity sliders for WACC, Terminal Growth, and Revenue projections to test fundamental investment theses.
+
 ---
 
 ## Tech Stack
-* **Backend:** Python (Flask), `concurrent.futures`, `yfinance`
-* **Computational:** `Pandas`, `NumPy`, `skfolio`, `SciPy` (Optimization & Stats)
-* **Data Visualization:** `Plotly.js` (Interactive Financial Charts)
-* **Model Export:** `XlsxWriter` (Automated Excel Engineering)
-* **Frontend:** Tailwind CSS, Vanilla JavaScript (Async/Await Data Lifecycle)
+* **Backend:** Python (Flask), `statsmodels` (Econometrics), `SciPy` (Stats & Optimization)
+* **Computational:** `Pandas`, `NumPy`, `skfolio` (Portfolio Optimization)
+* **Visualization:** `Plotly.js` (Interactive Financial Data Visualization)
+* **Frontend:** Tailwind CSS, Vanilla JavaScript (Async Data Lifecycle Management)
 
 ---
 
-## Contact & Professional Inquiries
-**Harshit Singh** *Fresh Graduate | Aspiring Investment Professional* [LinkedIn](https://linkedin.com/in/harshit-singh-502246214/) | [Email](mailto:harshitsingh4907@gmail.com)
+## Academic Foundation & Acknowledgments
+This project is built upon foundational principles of Financial Engineering and Quantitative Analysis.
 
-Special thanks to **Prof. Byomakesh Debata** and **Prof. Aditya Sharma** for the foundational lectures on **Risk Analysis**.
+**Special Thanks to:**
+* **Prof. Byomakesh Debata** & **Prof. Aditya Sharma** for foundational lectures on **Risk Analysis** and Institutional Valuation.
+* **Academic Peer Review:** My deep gratitude for the guidance on Stochastic Processes and Time-Series Econometrics that validated the underlying mathematical models.
+
+## Contact & Professional Inquiries
+**Harshit Singh** | [LinkedIn](https://linkedin.com/in/harshit-singh-502246214/) | [Email](mailto:harshitsingh4907@gmail.com)
